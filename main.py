@@ -1,7 +1,7 @@
 import os
 import face_detect as f  # face_detect.py
 import base64
-from flask timport Flask, request, abort
+from flask import Flask, request, abort
 from linebot import (
     LineBotApi, WebhookHandler
 )
