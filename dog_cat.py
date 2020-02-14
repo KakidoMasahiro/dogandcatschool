@@ -1,18 +1,7 @@
-from flask import Flask, redirect, request, jsonify, render_template
-from flask_cors import CORS
-from keras import models
 from keras.models import load_model
 from keras.backend import tensorflow_backend as backend
 from PIL import Image, ImageFile
-import keras
 import numpy as np
-import sys, os, io
-import glob
-import tensorflow as tf
-
-ImageFile.LOAD_TRUNCATED_IMAGES = True
-app = Flask(__name__)
-CORS(app)
 
 imsize = (64, 64)
 keras_param = "./cnn.h5"

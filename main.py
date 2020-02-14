@@ -1,6 +1,6 @@
 import os
 import face_detect as f  # face_detect.py
-import dog_cat as dc # dog_cat.py
+import dog_cat as dc  # dog_cat.py
 import base64
 from flask import Flask, request, abort
 from linebot import (
