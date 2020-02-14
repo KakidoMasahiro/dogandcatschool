@@ -1,6 +1,5 @@
 import os
 import face_detect as f  # face_detect.py
-import dog_cat as dc  # dog_cat.py
 import base64
 from flask import Flask, request, abort
 from linebot import (
@@ -62,19 +61,8 @@ def handle_image_message(event):
     for chunk in message_content.iter_content():
         push_img += chunk #画像をiter_contentでpush_imgに順次代入
 
-    type(chunk)
-    print(chunk)
-
-    type(push_img)
-    print(push_img)
-
-    msg = dc.load_image(push_img)
-
-    if msg == DOG_LABEL or msg == CAT_LABEL:
-        msg = "この画像は" + animal_list[msg] + "ですね！"
-    else:
-        push_img = base64.b64encode(push_img) # APIに通すためbase64エンコード
-        msg = f.face_detect(push_img)
+    push_img = base64.b64encode(push_img) # APIに通すためbase64エンコード
+    msg = f.face_detect(push_img)
 
     line_bot_api.reply_message(event.reply_token, TextSendMessage(text=msg))
 
