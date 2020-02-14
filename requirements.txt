@@ -2,4 +2,4 @@ line-bot-sdk
 flask
 tensorflow
 keras
-PIL
+Pillow
