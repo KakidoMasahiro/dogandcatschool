@@ -62,6 +62,12 @@ def handle_image_message(event):
     for chunk in message_content.iter_content():
         push_img += chunk #画像をiter_contentでpush_imgに順次代入
 
+    type(chunk)
+    print(chunk)
+
+    type(push_img)
+    print(push_img)
+
     msg = dc.load_image(push_img)
 
     if msg == DOG_LABEL or msg == CAT_LABEL:
