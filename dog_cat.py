@@ -1,6 +1,6 @@
 from keras.models import load_model
 from keras.backend import tensorflow_backend as backend
-from PIL import Image, ImageFile
+from PIL import Image
 import numpy as np
 
 imsize = (64, 64)
